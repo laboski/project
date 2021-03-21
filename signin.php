@@ -17,6 +17,16 @@
 			margin-top: 2em;
 		}
 
+		p, a{
+			width: 40%;
+			margin-right: 30%;
+			margin-left: 30%;
+			padding: 2em;
+			margin-top: 2em;
+		}
+
+
+
 	</style>
 </head>
 <body>
@@ -25,5 +35,7 @@
 		<input type="password" name="password" placeholder="Password" required><br>
 		<input type="submit" name="submit" value="Submit"><br>
 	</form>
+	<p>Click the link below to create an account</p>
+	<a href="login.php">Sign Up</a>
 </body>
 </html>

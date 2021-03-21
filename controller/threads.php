@@ -23,16 +23,13 @@
 
 			//stmt
 
-			if ($stmt = $this->conn->prepare($createthread)) {
-				$stmt->bind_param('isss', $userid, $title, $content, $datecreated);
+			$stmt = $this->conn->prepare($createthread);
+			
+			$stmt->bind_param('isss', $userid, $title, $content, $datecreated);
 
-				$stmt->execute();
-			}else{
-				echo $this->conn->error;
-			}
+			$stmt->execute();
 
-
-			//return $this->conn->insert_id;
+			return $this->conn->insert_id;
 
 		}
 
