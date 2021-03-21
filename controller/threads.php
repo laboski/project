@@ -18,17 +18,21 @@
 		{
 			// query for create thread
 
-			$createthread = 'INSERT INTO `trendsthreads`(userid, title, content, datecreated)VALUES(?,?,?,?)';
+
+			$createthread = 'INSERT INTO `trendsthreads`(userid, title, content, datecreated) VALUES(?,?,?,?)';
 
 			//stmt
 
-			$stmt = $this->conn->prepare($createthread);
+			if ($stmt = $this->conn->prepare($createthread)) {
+				$stmt->bind_param('isss', $userid, $title, $content, $datecreated);
 
-			$stmt->bind_param('isss', $userid, $title, $content, $datecreated);
+				$stmt->execute();
+			}else{
+				echo $this->conn->error;
+			}
 
-			$stmt->execute();
 
-			return $this->conn->insert_id;
+			//return $this->conn->insert_id;
 
 		}
 
@@ -56,7 +60,7 @@
 		{
 			// query to get thread by id
 
-			$getthreadbythreadid = 'SELECT * FROM `trendsthreads`';
+			$getthreadbythreadid = 'SELECT * FROM `trendsthreads` ORDER BY title ASC';
 
 			// query
 

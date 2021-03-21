@@ -3,6 +3,21 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<style type="text/css">
+		
+		body{
+			background-color: #466;
+		}
+
+		input{
+			width: 40%;
+			margin-right: 30%;
+			margin-left: 30%;
+			padding: 2em;
+			margin-top: 2em;
+		}
+
+	</style>
 </head>
 <body>
 	<form action="model/login.php" method="post">

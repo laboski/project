@@ -17,6 +17,22 @@
  <html>
  <head>
  	<title></title>
+ 	<style type="text/css">
+ 		
+ 		textarea{
+			width: 50%;
+			margin: 1em 25%;
+			height: 200px;
+		}
+
+		input{
+			width: 40%;
+			margin: 1em 30%;
+			padding: 1em;			
+		}
+
+
+ 	</style>
  </head>
  <body>
  	<header style="width: 100%; min-height: 200px; background-color: #245">
@@ -24,15 +40,16 @@
 		<a href="user.php"><button>Profile</button></a><br>
 		<a href="logout.php"><button>Logout</button></a><br>
 	</header><br>
- 	<?php 
+ 	<div>
+ 		<?php 
 
  		if (isset($_POST['submit'])) {
+ 			$userid = htmlentities($_SESSION['user_id']);
  			$title = $_POST['title'];
  			$content = $_POST['content'];
- 			$user_id = htmlentities($_SESSION['user_id']);
  			$datecreated = date('Y/m/d');
 
- 			$_SESSION['threadid'] = $Threads->createThread($user_id, $title, $content, $datecreated);
+ 			$Threads->createThread($userid, $title, $content, $datecreated);
 
  			header("Location: index.php");
  		}
@@ -44,5 +61,6 @@
  		<textarea name="content" placeholder="Content goes here"></textarea><br>
  		<input type="submit" name="submit" value="Submit">
  	</form>
+ 	</div>
  </body>
  </html>

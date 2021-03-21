@@ -29,6 +29,22 @@
  <html>
  <head>
  	<title></title>
+ 	<style type="text/css">
+ 		
+ 		a{
+ 			text-decoration: none;
+ 		}
+
+ 		li{
+ 			text-align: center;
+ 			width: 50%;
+ 			margin: 2em 25%;
+ 			list-style-type: none;
+ 			background-color: grey;
+ 			color: white;
+ 		}
+
+ 	</style>
  </head>
  <body>
 
